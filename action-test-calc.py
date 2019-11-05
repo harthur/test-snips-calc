@@ -12,9 +12,9 @@ CONFIG_INI = "config.ini"
 # please get this mqtt connection info from <config.ini>
 #
 # hint: MQTT server is always running on the master device
-MQTT_IP_ADDR: str = "localhost"
-MQTT_PORT: int = 1883
-MQTT_ADDR: str = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
+MQTT_IP_ADDR = "localhost"
+MQTT_PORT = 1883
+MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 
 class CalcAction:
@@ -33,10 +33,7 @@ class CalcAction:
         self.start_blocking()
 
     @staticmethod
-    def compute_sum_callback(
-        hermes: Hermes,
-        intent_message: IntentMessage
-    ):
+    def compute_sum_callback(hermes, intent_message):
         # terminate the session first if not continue
         hermes.publish_end_session(intent_message.session_id, "TT end session")
 
@@ -59,8 +56,7 @@ class CalcAction:
 
 
     @staticmethod
-    def intent_2_callback(hermes: Hermes,
-                          intent_message: IntentMessage):
+    def intent_2_callback(hermes, intent_message):
 
         # terminate the session first if not continue
         hermes.publish_end_session(intent_message.session_id, "")
