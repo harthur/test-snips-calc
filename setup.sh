@@ -8,7 +8,7 @@ fi
 VENV=venv
 
 if [ ! -d $VENV ]; then
-    PYTHON=`which python3.7`
+    PYTHON=`which python3.5`
 
     if [ -f $PYTHON ]; then
         virtualenv -p $PYTHON $VENV
