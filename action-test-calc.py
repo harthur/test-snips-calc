@@ -38,7 +38,7 @@ class CalcAction:
         intent_message: IntentMessage
     ):
         # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
+        hermes.publish_end_session(intent_message.session_id, "TT end session")
 
         # action code goes here...
         print('TT[Received] intent: {}'.format(
