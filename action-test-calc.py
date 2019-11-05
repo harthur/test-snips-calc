@@ -34,25 +34,25 @@ class CalcAction:
 
     @staticmethod
     def compute_sum_callback(hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "TT end session")
+        # # terminate the session first if not continue
+        # hermes.publish_end_session(intent_message.session_id, "TT end session")
 
-        # action code goes here...
-        print('TT[Received] intent: {}'.format(
-            intent_message.intent.intent_name))
+        # # action code goes here...
+        # print('TT[Received] intent: {}'.format(
+        #     intent_message.intent.intent_name))
 
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(
-            intent_message.site_id,
-            "TT Compute Sum Started", "")
+        # # if need to speak the execution result by tts
+        # hermes.publish_start_session_notification(
+        #     intent_message.site_id,
+        #     "TT Compute Sum Started", "")
 
-        # first_term = intentMessage.slots.firstTerm.first().value
-        # second_term = intentMessage.slots.secondTerm.first().value
+        first_term = intent_message.slots.firstTerm.first().value
+        second_term = intent_message.slots.secondTerm.first().value
 
-        # sum = first_term + second_term
+        sum = first_term + second_term
 
-        # hermes.publish_end_session(intentMessage.session_id,
-        # "Computed sum: " + str(sum))
+        hermes.publish_end_session(intentMessage.session_id,
+        "Computed sum: " + str(sum))
 
 
     @staticmethod
