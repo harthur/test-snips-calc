@@ -41,13 +41,13 @@ class CalcAction:
         hermes.publish_end_session(intent_message.session_id, "")
 
         # action code goes here...
-        print('[Received] intent: {}'.format(
+        print('TT[Received] intent: {}'.format(
             intent_message.intent.intent_name))
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(
             intent_message.site_id,
-            "Compute Sum Started", "")
+            "TT Compute Sum Started", "")
 
         # first_term = intentMessage.slots.firstTerm.first().value
         # second_term = intentMessage.slots.secondTerm.first().value
