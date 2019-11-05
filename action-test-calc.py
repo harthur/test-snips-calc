@@ -51,7 +51,7 @@ class CalcAction:
 
         sum = first_term + second_term
 
-        hermes.publish_end_session(intentMessage.session_id,
+        hermes.publish_end_session(intent_message.session_id,
         "Computed sum: " + str(sum))
 
 
